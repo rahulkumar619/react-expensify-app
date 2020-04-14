@@ -19,12 +19,15 @@ calendarFocused:null
     }
 render(){
     return (
-        <div>
-        <input type = "text"  value = {this.props.filters.text} onChange = {(e) => {
-        props.dispatch(setTextFilter(e.target.value));
+        <div className="content-container">
+            <div className="input-group">
+            <div className="input-group-item">
+            <input placeholder="Search Expenses" className="text-input" type = "text"  value = {this.props.filters.text} onChange = {(e) => {
+        this.props.dispatch(setTextFilter(e.target.value));
         }} /> 
-        
-        <select value = {this.props.filters.sortBy} onChange = {(e) => {
+            </div>
+            <div className="input-group-item">
+            <select className="select" value = {this.props.filters.sortBy} onChange = {(e) => {
             if (e.target.value === 'date') {
                 this.props.dispatch(sortByDate());
             }
@@ -36,6 +39,9 @@ render(){
         <option value="amount">Amount</option>
         
         </select>
+            </div>
+            <div className="input-group-item">
+                 
         <DateRangePicker 
         startDate={this.props.filters.startDate}
         endDate={this.props.filters.endDate}
@@ -46,6 +52,9 @@ render(){
         numberOfMonths={1}
         isOutsideRange={() => false}
         />
+            </div>
+            </div>
+ 
             </div>
         
     );

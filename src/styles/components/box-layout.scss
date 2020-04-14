@@ -1,0 +1,25 @@
+.box-layout{
+    background: url('/images/background-business-computer-connection-303383.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    
+}
+
+.box-layout-box{
+
+    background: fade-out($color:white, $amount: 0.6);
+    border-radius: 3px;
+    padding: $l-size $m-size;
+    text-align: center;
+    width: 25rem;
+    float: left;
+    margin-left: 75%;
+
+}
+.box-layout-title{
+    margin: 0 0 $m-size 0;
+    line-height: 1;
+}
